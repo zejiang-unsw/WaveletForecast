@@ -1,0 +1,23 @@
+Package: WaveletForecast
+Title: Forecast time series using wavelet methods
+Version: 1.0.0
+Authors@R: 
+    person(given = "Ze",
+           family = "Jiang",
+           role = c("aut", "cre"),
+           email = "ze.jiang@unsw.edu.au",
+           comment = c(ORCID = "0002-3472-0829"))
+Description: Forecast time series using wavelet methods
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    BMA,
+    waveslim,
+    forecast,
+    ForecastComb
+Suggests: 
+    testthat
+RoxygenNote: 7.1.0
+
+
