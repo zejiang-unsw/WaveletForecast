@@ -2,10 +2,9 @@
 #'
 #' @param y 
 #' @param xreg 
-#' @param J 
-#' @param wf 
-#' @param boundary 
 #' @param NForecast 
+#' @param transfo 
+#' @param lambda 
 #'
 #' @return
 #' @export
@@ -13,7 +12,7 @@
 #' 
 #' @examples
 #' 
-WaveletBMA<- function(y,xreg,wf="haar",J,boundary,NForecast, transfo=c("log","sqrt"), lambda=0.5)
+WaveletBMA<- function(y, xreg, NForecast, transfo=c("log","sqrt"), lambda=0.5)
 { 
   n1 <- length(y)-NForecast
   
@@ -51,14 +50,16 @@ WaveletBMA<- function(y,xreg,wf="haar",J,boundary,NForecast, transfo=c("log","sq
     FinalForecast[i] <- WaveletBMAForecast$mean 
   }
   
-  FinalPrediction <- rowMeans(AllPrediction, na.rm = T) 
-  
+
   if(transfo=="log"){
     FinalForecast <- exp(FinalForecast)-lambda
     FinalPrediction <- rowMeans(apply(AllPrediction, 2, function(x) exp(x)-lambda))
   } else if(transfo=="sqrt") {
     FinalForecast <- FinalForecast^2-lambda
     FinalPrediction <- rowMeans(apply(AllPrediction, 2, function(x) x^2-lambda))
+  } else {
+    
+    FinalPrediction <- rowMeans(AllPrediction, na.rm = T) 
   }
   
 
