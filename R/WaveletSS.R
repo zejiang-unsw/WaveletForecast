@@ -151,8 +151,7 @@ WaveletSS.xreg<- function(y,xreg,NForecast, order=1, freq=12, method=F,flag.comb
               Accuracy.Test = Accuracy.Test,
               
               FinalForecast = FinalForecast,
-              FinalPrediction=FinalPrediction,
-              pic=pic))
+              FinalPrediction=FinalPrediction))
 }
 
 
