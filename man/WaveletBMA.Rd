@@ -4,29 +4,18 @@
 \alias{WaveletBMA}
 \title{WaveletBMA}
 \usage{
-WaveletBMA(
-  y,
-  xreg,
-  wf = "haar",
-  J,
-  boundary,
-  NForecast,
-  transfo = c("log", "sqrt"),
-  lambda = 0.5
-)
+WaveletBMA(y, xreg, NForecast, transfo = c("log", "sqrt"), lambda = 0.5)
 }
 \arguments{
 \item{y}{}
 
 \item{xreg}{}
 
-\item{wf}{}
-
-\item{J}{}
-
-\item{boundary}{}
-
 \item{NForecast}{}
+
+\item{transfo}{}
+
+\item{lambda}{}
 }
 \value{
 

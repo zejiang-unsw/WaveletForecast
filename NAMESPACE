@@ -2,5 +2,9 @@
 
 export(WaveletAnn)
 export(WaveletAnn.xreg)
+export(WaveletArima)
+export(WaveletArima.reg)
 export(WaveletBMA)
+export(WaveletSS)
+export(WaveletSS.xreg)
 importFrom(forecast,accuracy)

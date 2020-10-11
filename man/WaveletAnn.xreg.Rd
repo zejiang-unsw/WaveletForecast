@@ -4,29 +4,16 @@
 \alias{WaveletAnn.xreg}
 \title{WaveletAnn with external regressors}
 \usage{
-WaveletAnn.xreg(
-  y,
-  xreg,
-  wf = "haar",
-  J,
-  boundary,
-  NForecast,
-  flag.comb = "BG",
-  ...
-)
+WaveletAnn.xreg(y, xreg, NForecast, mode = T, flag.comb = "BG", ...)
 }
 \arguments{
 \item{y}{}
 
 \item{xreg}{}
 
-\item{wf}{}
-
-\item{J}{}
-
-\item{boundary}{}
-
 \item{NForecast}{}
+
+\item{mode}{}
 
 \item{flag.comb}{}
 

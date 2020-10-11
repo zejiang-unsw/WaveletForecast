@@ -41,3 +41,4 @@ vignettes/result/
 /tests/
 /data-raw/
 *.Rproj
+inst/doc
