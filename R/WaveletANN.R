@@ -63,7 +63,6 @@ WaveletAnn<- function(y,wf="haar",J,boundary,NForecast,...)
 #' @param mode 
 #' @param flag.comb 
 #' @param ... 
-
 #'
 #' @return
 #' @export

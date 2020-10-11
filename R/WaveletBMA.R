@@ -16,7 +16,7 @@ WaveletBMA<- function(y, xreg, NForecast, transfo=c("log","sqrt"), lambda=0.5)
 { 
   n1 <- length(y)-NForecast
   
-  ##!!!do we need transform for rainfall
+  ### data domain transformation
   if(transfo=="log"){
     y <- log(y+lambda)
   } else if(transfo=="sqrt"){
@@ -29,9 +29,6 @@ WaveletBMA<- function(y, xreg, NForecast, transfo=c("log","sqrt"), lambda=0.5)
   xreg <- as.matrix(xreg) 
   
   FinalForecast <- rep(NA,NForecast); AllPrediction <- NULL
-  #-----------------------------------------------------------#
-  # Fitting of ANN model to the Wavelet Coef                  #
-  #-----------------------------------------------------------#
   for(i in 1:NForecast){
     tmp <- rep(NA, n1)
     
@@ -50,7 +47,7 @@ WaveletBMA<- function(y, xreg, NForecast, transfo=c("log","sqrt"), lambda=0.5)
     FinalForecast[i] <- WaveletBMAForecast$mean 
   }
   
-
+  ### inverse transformation
   if(transfo=="log"){
     FinalForecast <- exp(FinalForecast)-lambda
     FinalPrediction <- rowMeans(apply(AllPrediction, 2, function(x) exp(x)-lambda))
@@ -63,7 +60,7 @@ WaveletBMA<- function(y, xreg, NForecast, transfo=c("log","sqrt"), lambda=0.5)
   }
   
 
-  
+  ###output
   Accuracy_Train <- accuracy(FinalPrediction, train_o)
   Accuracy_Test <- accuracy(FinalForecast, test_o)
 
