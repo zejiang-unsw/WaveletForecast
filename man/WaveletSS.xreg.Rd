@@ -9,7 +9,9 @@ WaveletSS.xreg(
   xreg,
   NForecast,
   order = 1,
-  freq = 12,
+  freq = 4,
+  par,
+  wt,
   method = F,
   flag.comb = "BG",
   ...

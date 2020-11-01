@@ -42,3 +42,4 @@ vignettes/result/
 /data-raw/
 *.Rproj
 inst/doc
+vignettes/WaveletForecast.Rmd
